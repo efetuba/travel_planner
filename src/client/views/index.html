@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Travel Planner</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header">
+        <h1>Travel Planner App</h1>
+    </div>
+</header>
+
+<main>
+    <section>
+        <form class="" onsubmit="return Client.handleSubmit(event)">
+          <label for="place"> Where to go?</label>
+            <input id="place" type="text" name="city" value=""  placeholder="Enter a city" required>
+          <label for="date">When to go?</label> 
+            <input id="date" type="date"  name="date">
+            <input id="submit" type="submit" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+        </form>
+    </section>
+    <section>
+        <div id="planned">
+          <div id="dest"></div>
+          <div id="time"></div>
+          <div id="temp"></div>
+        </div>
+    </section>
+</main>
+  <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+        });
+    }
+</script>
+</body>
+</html>
