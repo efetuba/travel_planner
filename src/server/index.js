@@ -39,9 +39,10 @@ function callBack(req, res){
 app.post('/addInfo', function(req, res){
     projectData.place=req.body.place;
     projectData.latitude= req.body.latitude;
-    projectData.date=req.body.date;
+    projectData.daysLeft=req.body.daysLeft;
     projectData.longitude=req.body.longitude;
-    projectData.temperature= req.body.temperature;
-    console.log(newInfo);
+    projectData.highTemp= req.body.highTemp;
+    projectData.lowTemp = req.body.lowTemp;
+    projectData.weather= req.body.weather;
     res.send(JSON.stringify(projectData));
 })
