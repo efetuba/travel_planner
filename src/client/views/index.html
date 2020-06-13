@@ -4,34 +4,57 @@
 <meta charset="UTF-8">
 <title>Travel Planner</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
-  <header>
-    <div class="header">
-        <h1>Travel Planner App</h1>
-    </div>
-</header>
+  <header class="header">
+    <nav class="navbar">
+      <ul>
+        <li class="navbar__list"><a href="#about">About</a></li>
+        <li class="navbar__list"><a href="#plan">Plan your trip</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<main>
-    <section>
-        <form class="" onsubmit="return Client.handleSubmit(event)">
+<main class="main">
+    <section id="about" class="section__about">
+      <div class="container">
+        <div>
+        <h1>Travel Planner</h1>
+        <p>If you are curious about the world and your hobby is to travel around, this app is what you need!</p>
+        <a href="#" id="add">+ Let's start!</a>
+      </div>
+    </div>
+    </section>
+    <section id="plan" class="section__plan">
+      <div class="container">
+        <form id="form" onsubmit="return Client.handleSubmit(event)">
           <label for="place"> Where to go?</label>
             <input id="place" type="text" name="city" value=""  placeholder="Enter a city" required>
           <label for="date">When to go?</label> 
             <input id="date" type="date"  name="date">
             <input id="submit" type="submit" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
         </form>
+      </div>
     </section>
-    <section>
-        <div id="planned">
-          <div id="dest"></div>
-          <div id="time"></div>
-          <div id="temp"></div>
-          <div id="weat"></div>
+    <section id="results"class="section__results invisible">
+        <div class="container" >
+          <div id="final">
+            <div id="dest"></div>
+            <div id="time"></div>
+            <div id="temp"></div>
+            <div id="weat"></div>
+          </div>
+          <figure>
+            <img src="" id="pixpic">
+          </figure>
+          <a class=" button__save" id="save" href="#">Print</a>
+          <a class=" button__delete" id="delete" href="#">Delete</a>
         </div>
     </section>
 </main>
+
   <script>
     // Check that service workers are supported
     if ('serviceWorker' in navigator) {

@@ -5,9 +5,9 @@ import { postData } from './js/postData'
 import { handleSubmit } from './js/app'
 import { updateUI } from './js/updateUI'
 
-
-
 import './styles/style.scss'
+import './styles/section.scss'
+import './styles/header.scss'
 
 export{ 
     getCityInfo,

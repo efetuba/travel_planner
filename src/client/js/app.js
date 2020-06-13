@@ -4,7 +4,32 @@ let weatherKey= "8895c723c4434587acad65666701180a";
 let pixabayApi= "16759907-f3b150f4cf015d7cbe6c3b8ed";
 // Create a new date instance dynamically with JS
 const timestampNow = (Date.now()) / 1000;
+const plan= document.getElementById('plan');
+const form = document.getElementById('form');
+const printButton= document.getElementById('save');
+const deleteButton = document.getElementById('delete');
+const results= document.getElementById('results');
 //
+document.getElementById('add').addEventListener('click' , function(e){
+    e.preventDefault();
+    plan.scrollIntoView({behavior:'smooth'});
+})
+document.getElementById('submit').addEventListener('click', function(){
+    plan.classList.add("invisible");
+    results.classList.remove("invisible");
+})
+form.addEventListener('submit', handleSubmit);
+// print button
+printButton.addEventListener('click', function (e) {
+  window.print();
+  location.reload();
+});
+// delete button
+deleteButton.addEventListener('click', function (e) {
+  form.reset();
+  results.classList.add("invisible");
+  location.reload();
+})
 async function handleSubmit(event){
     event.preventDefault();
     let planData={};
@@ -44,7 +69,7 @@ async function handleSubmit(event){
     const imageURL= `https://pixabay.com/api/?key=${pixabayApi}&q=${place}`;
     pixabayData= await Client.getImage(imageURL)
     console.log(pixabayData);
-    document.body.style.backgroundImage = `url(${pixabayData})`;
+    document.getElementById('pixpic').setAttribute('src', pixabayData );
     //update page
     await Client.updateUI()
 }
