@@ -30,3 +30,8 @@ The project have service workers set up in webpack to provide the offline functi
 
 ## Print and Delete modes
 By adding print and delete buttons, user's can be print their travel plan or delete it for a new destination. 
+
+## Testing with Jest
+Testing is done with Jest. To run test, use the command 
+
+` $ npm run test`
